@@ -2,5 +2,6 @@ com/launchacademy/petSurrender/controllers/PetsRestController.class
 com/launchacademy/petSurrender/repositories/PetRepository.class
 com/launchacademy/petSurrender/models/Pet.class
 com/launchacademy/petSurrender/controllers/PetsRestController$PetNotFoundException.class
+com/launchacademy/petSurrender/seeders/MainSeeder.class
 com/launchacademy/petSurrender/seeders/PetsSeeder.class
 com/launchacademy/petSurrender/PetSurrenderApplication.class
