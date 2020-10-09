@@ -1,12 +1,14 @@
 package com.launchacademy.petSurrender.controllers;
 
-import com.launchacademy.petSurrender.models.Pet;
+import com.launchacademy.petSurrender.models.PetSurrender;
+import com.launchacademy.petSurrender.models.PetType;
 import com.launchacademy.petSurrender.repositories.PetRepository;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -22,7 +24,10 @@ public class PetsRestController {
   public PetsRestController(PetRepository petRepository) { this.petRepository = petRepository; }
 
   @GetMapping("/pets")
-  public Iterable<Pet> displayPets() { return petRepository.findAll();}
+  public Iterable<PetSurrender> displayPets() { return petRepository.findAll();}
+
+  @GetMapping("/pets/{pet_type}")
+  public Iterable<PetSurrender> displayPetTypes(@PathVariable String pet_type) { return petRepository.findByPetTypeType(pet_type);}
 
   @NoArgsConstructor
   private class PetNotFoundException extends RuntimeException {

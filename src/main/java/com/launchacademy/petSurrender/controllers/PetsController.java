@@ -10,4 +10,9 @@ public class PetsController {
   public String forward() {
     return "forward:/";
   }
+
+//  @GetMapping()
+//  public String justRedirectOmg() {
+//    return "redirect:/pets";
+//  }
 }

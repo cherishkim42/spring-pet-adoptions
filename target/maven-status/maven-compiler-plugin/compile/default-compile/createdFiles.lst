@@ -1,7 +1,15 @@
 com/launchacademy/petSurrender/controllers/PetsRestController.class
+com/launchacademy/petSurrender/repositories/PetTypeRepository.class
+com/launchacademy/petSurrender/models/PetSurrenderApplication.class
 com/launchacademy/petSurrender/repositories/PetRepository.class
-com/launchacademy/petSurrender/models/Pet.class
+com/launchacademy/petSurrender/repositories/PetSurrenderApplicationRepository.class
+com/launchacademy/petSurrender/models/PetSurrender.class
+com/launchacademy/petSurrender/controllers/PetSurrenderApplicationRestController.class
+com/launchacademy/petSurrender/seeders/PetTypesSeeder.class
+com/launchacademy/petSurrender/controllers/PetsController.class
 com/launchacademy/petSurrender/controllers/PetsRestController$PetNotFoundException.class
+com/launchacademy/petSurrender/models/PetType.class
 com/launchacademy/petSurrender/seeders/MainSeeder.class
 com/launchacademy/petSurrender/seeders/PetsSeeder.class
+com/launchacademy/petSurrender/controllers/PetTypeRestController.class
 com/launchacademy/petSurrender/PetSurrenderApplication.class
