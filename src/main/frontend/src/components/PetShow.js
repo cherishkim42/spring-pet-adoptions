@@ -6,16 +6,32 @@ const PetShow = (props) => {
   const [displayForm, setDisplayForm] = useState(false)
   const [pet, setPet] = useState([])
   const [applicationStatus, setApplicationStatus] = useState("")
+  const [pageFound, setPageFound] = useState(true)
 
   let vaccinated = pet.vaccination_status === true? "Yes" : "No"
   
-  useEffect(() => {
-   fetch(`/api/v1/pets/pet_type/${petId}`)
-    .then(result => result.json())
-    .then(pet => {
-      setPet(pet[0])
+//  useEffect(() => {
+//   fetch(`/api/v1/pets/{pet_type}/${petId}`)
+//    .then(result => result.json())
+//    .then(pet => {
+//      setPet(pet[0])
+//    })
+//  }, []);
+
+    useEffect(() => {
+     fetch(`/api/v1${props.location.pathname}`)
+      .then(response => {
+        if (response.ok) {
+        return response
+      } else {
+        setPageFound(false)
+      }
     })
-  }, []);
+      .then(result =>  result.json())
+      .then(pet => {
+        setPet(pet)
+      })
+    }, []);
   
   const handleAdoptClick = () => {
     let formState = displayForm === true ? false : true
@@ -31,9 +47,15 @@ const PetShow = (props) => {
       setDisplayForm={setDisplayForm}
       /> : <button onClick={handleAdoptClick}>Adopt Me!</button>
   }
-  
+
+  let bad;
+    if(!pageFound) {
+      bad = <p>Page not found</p>
+    }
+
   return (
     <div>
+      {bad}
       <h1>Adopt Me!!</h1>
       
       <h3>Name: {pet.name}</h3>
@@ -43,6 +65,7 @@ const PetShow = (props) => {
       {adoptForm}
     </div>
   );
+
 }
 
 export default PetShow
